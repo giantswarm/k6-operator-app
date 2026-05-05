@@ -2,30 +2,28 @@
 # for details and background.
 
 apiVersion: v2
-
 # Version of the packaged app
-appVersion: 0.0.1
-
+appVersion: "1.4.0"
 # Make sure your name DOES NOT end in "app" or "-app".
 name: k6-operator
-
 # Please describe what the app provides in a sentence or two.
-description: Please add description
-
+description: A Helm chart to install the k6-operator
 # URL of the GitHub repository that is the source of this Chart.yaml file.
-home: https://github.com/giantswarm/k6-operator
-
+home: https://github.com/giantswarm/k6-operator-app
 # If you have an icon/logo, you should add it to https://github.com/giantswarm/web-assets
 # and set the final URL here.
 icon: https://s.giantswarm.io/app-icons/giantswarm/1/light.svg
-
 sources:
-- https://github.com/some-org/some-repo
-version: 0.0.0-dev
+  - https://github.com/giantswarm/k6-operator-app
+  - https://github.com/grafana/k6-operator/blob/main/charts/k6-operator
+dependencies:
+  - name: k6-operator
+    alias: k6operator
+    version: 4.4.1
+    repository: https://grafana.github.io/helm-charts
+    condition: k6operator.enabled
+version: 0.1.0
 annotations:
-  # Adapt to 'giantswarm' if this application is not to be deployed by customers
-  io.giantswarm.application.audience: all
-  # Adapt to 'true' if Giant Swarm takes responsibility for this app where it's deplyed
+  io.giantswarm.application.audience: giantswarm
   io.giantswarm.application.managed: "false"
-  # used through .Chart.Annotations . Please replace TEAM-NAME with your team's short name, e. g. 'shield'  for team-shield
-  io.giantswarm.application.team: TEAM-NAME
+  io.giantswarm.application.team: cabbage

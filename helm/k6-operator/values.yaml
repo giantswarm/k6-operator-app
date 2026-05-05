@@ -1,12 +1,101 @@
-# This file is a Helm values file for the k6-operator chart.
-#
-# To learn more about how to configure your app on your cluster
-# and override the default values in here, visit:
-#
-#   https://docs.giantswarm.io/tutorials/fleet-management/app-platform/app-configuration/#basic-values-merging-example
-#
-image:
-  name: "giantswarm/k6-operator"
-  tag: ""
-registry:
-  domain: gsoci.azurecr.io
+k6operator:
+  enabled: false
+
+  customAnnotations: {}
+  podAnnotations: {}
+  customLabels: {}
+  podLabels: {}
+
+  affinity: {}
+  tolerations: []
+
+  installCRDs: true
+
+  rbac:
+    namespaced: false
+
+  namespace:
+    create: true
+
+  metrics:
+    serviceMonitor:
+      enabled: true
+      namespace: ""
+      jobLabel: ""
+      interval: ""
+      scrapeTimeout: ""
+      relabelings: []
+      metricRelabelings: []
+      selector: {}
+      labels: {}
+      honorLabels: false
+
+  service:
+    enabled: true
+
+    labels: {}
+    annotations: {}
+
+    portName: "https"
+
+  manager:
+    logging:
+      development: true
+
+    replicas: 1
+
+    serviceAccount:
+      name: k6-operator-controller
+      create: true
+
+    image:
+      registry: gsoci.azurecr.io
+      repository: giantswarm/k6-operator
+      tag: controller-v1.4.0
+      pullPolicy: IfNotPresent
+
+    livenessProbe:
+      httpGet:
+        path: /healthz
+        port: 8081
+      initialDelaySeconds: 15
+      periodSeconds: 20
+
+    readinessProbe:
+      httpGet:
+        path: /healthz
+        port: 8081
+      initialDelaySeconds: 5
+      periodSeconds: 10
+
+    env: []
+
+    envFrom: []
+
+    resources:
+      limits:
+        cpu: 100m
+        memory: 100Mi
+      requests:
+        cpu: 100m
+        memory: 50Mi
+
+    containerSecurityContext:
+      runAsNonRoot: true
+      runAsUser: 1000
+      runAsGroup: 1000
+      readOnlyRootFilesystem: true
+      allowPrivilegeEscalation: false
+      capabilities:
+        drop:
+          - ALL
+      seccompProfile:
+        type: RuntimeDefault
+
+    podSecurityContext:
+      fsGroup: 1000
+      runAsGroup: 1000
+      runAsNonRoot: true
+      runAsUser: 1000
+      seccompProfile:
+        type: RuntimeDefault

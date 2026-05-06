@@ -1,2 +1,2 @@
-vendor
-.vendir*
+helm/k6-operator/charts/*.tgz
+helm/k6-operator/Chart.lock

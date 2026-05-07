@@ -21,8 +21,8 @@ dependencies:
     alias: k6operator
     version: 4.4.1
     repository: https://grafana.github.io/helm-charts
-    condition: k6operatorEnabled
-version: 0.1.0
+    condition: k6operator.enabled
+version: 0.1.1
 annotations:
   io.giantswarm.application.audience: giantswarm
   io.giantswarm.application.managed: "false"

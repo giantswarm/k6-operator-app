@@ -14,9 +14,6 @@
                 "customLabels": {
                     "type": "object"
                 },
-                "enabled": {
-                    "type": "boolean"
-                },
                 "installCRDs": {
                     "type": "boolean"
                 },
@@ -288,6 +285,9 @@
                     "type": "array"
                 }
             }
+        },
+        "k6operatorEnabled": {
+            "type": "boolean"
         }
     }
 }

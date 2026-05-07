@@ -1,0 +1,95 @@
+k6operator:
+  enabled: true
+
+  customAnnotations: {}
+  podAnnotations: {}
+  customLabels: {}
+  podLabels: {}
+
+  affinity: {}
+  tolerations: []
+
+  installCRDs: true
+
+  rbac:
+    namespaced: false
+
+  namespace:
+    create: true
+
+  metrics:
+    serviceMonitor:
+      enabled: true
+      namespace: ""
+      jobLabel: ""
+      interval: ""
+      scrapeTimeout: ""
+      relabelings: []
+      metricRelabelings: []
+      selector: {}
+      labels: {}
+      honorLabels: false
+
+  service:
+    enabled: true
+
+    labels: {}
+    annotations: {}
+
+    portName: "https"
+
+  manager:
+    logging:
+      development: true
+
+    replicas: 1
+
+    serviceAccount:
+      name: k6-operator-controller
+      create: true
+
+    image:
+      registry: gsoci.azurecr.io
+      repository: giantswarm/k6-operator
+      tag: controller-v1.4.0
+      pullPolicy: IfNotPresent
+
+    livenessProbe:
+      httpGet:
+        path: /healthz
+        port: 8081
+      initialDelaySeconds: 15
+      periodSeconds: 20
+
+    readinessProbe:
+      httpGet:
+        path: /healthz
+        port: 8081
+      initialDelaySeconds: 5
+      periodSeconds: 10
+
+    env: []
+
+    envFrom: []
+
+    resources: {}
+
+    containerSecurityContext:
+      runAsNonRoot: true
+      runAsUser: 1000
+      runAsGroup: 1000
+      readOnlyRootFilesystem: true
+      allowPrivilegeEscalation: false
+      capabilities:
+        drop:
+          - ALL
+      seccompProfile:
+        type: RuntimeDefault
+
+    podSecurityContext:
+      fsGroup: 1000
+      runAsGroup: 1000
+      runAsNonRoot: true
+      runAsUser: 1000
+      seccompProfile:
+        type: RuntimeDefault

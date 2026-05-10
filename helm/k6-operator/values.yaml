@@ -3,7 +3,8 @@ k6operatorEnabled: false
 k6operator:
   customAnnotations: {}
   podAnnotations: {}
-  customLabels: {}
+  customLabels:
+    application.giantswarm.io/team: "cabbage"
   podLabels: {}
 
   affinity: {}

@@ -12,7 +12,12 @@
                     "type": "object"
                 },
                 "customLabels": {
-                    "type": "object"
+                    "type": "object",
+                    "properties": {
+                        "application.giantswarm.io/team": {
+                            "type": "string"
+                        }
+                    }
                 },
                 "installCRDs": {
                     "type": "boolean"

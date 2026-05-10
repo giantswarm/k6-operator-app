@@ -11,10 +11,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Fix Giant Swarm custom labels definition in helpers.
 
-### Changed
-
-- Changed team label definition from helpers to `customLabels` field in values.
-
 ## [0.1.2] - 2026-05-07
 
 ### Changed

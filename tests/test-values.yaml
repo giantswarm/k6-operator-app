@@ -1,6 +1,6 @@
-k6operator:
-  enabled: true
+k6operatorEnabled: true
 
+k6operator:
   customAnnotations: {}
   podAnnotations: {}
   customLabels: {}
@@ -15,7 +15,7 @@ k6operator:
     namespaced: false
 
   namespace:
-    create: true
+    create: false
 
   metrics:
     serviceMonitor:

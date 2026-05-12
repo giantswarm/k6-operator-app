@@ -15,7 +15,7 @@ k6operator:
     namespaced: false
 
   namespace:
-    create: true
+    create: false
 
   metrics:
     serviceMonitor:

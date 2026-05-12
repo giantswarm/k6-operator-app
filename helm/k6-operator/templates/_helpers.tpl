@@ -16,19 +16,19 @@ Create chart name and version as used by the chart label.
 {{/*
 Common labels
 */}}
-{{- define "labels.common" -}}
+{{- define "k6-operator.labels" -}}
 app: {{ include "name" . | quote }}
-{{ include "labels.selector" . }}
+{{ include "k6-operator.selectorLabels" . }}
 app.kubernetes.io/managed-by: {{ .Release.Service | quote }}
 app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
-application.giantswarm.io/team: {{ index .Chart.Annotations "io.giantswarm.application.team" | quote }}
+application.giantswarm.io/team: {{ index .Chart.Annotations "io.giantswarm.application.team" | default "cabbage" | quote }}
 helm.sh/chart: {{ include "chart" . | quote }}
 {{- end -}}
 
 {{/*
 Selector labels
 */}}
-{{- define "labels.selector" -}}
+{{- define "k6-operator.selectorLabels" -}}
 app.kubernetes.io/name: {{ include "name" . | quote }}
 app.kubernetes.io/instance: {{ .Release.Name | quote }}
 {{- end -}}

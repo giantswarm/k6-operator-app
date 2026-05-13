@@ -10,7 +10,7 @@ from pytest_helm_charts.k8s.deployment import wait_for_deployments_to_run
 logger = logging.getLogger(__name__)
 
 namespace_name = "k6-operator"
-deployment_name = "k6-operator-controller-manager"
+deployment_name = "k6-operator-k6operator-controller-manager"
 
 timeout: int = 900
 
@@ -59,4 +59,4 @@ def pods(kube_cluster: Cluster) -> pykube.Pod:
 @pytest.mark.upgrade
 @pytest.mark.flaky(reruns=5, reruns_delay=10)
 def test_pods_available(deployment: pykube.Deployment):
-    assert int(deployment.obj["status"]["readyReplicas"]) == int(deployment.obj["spec"]["replicas"])
+    assert int(deployment[0].obj["status"]["readyReplicas"]) == int(deployment[0].obj["spec"]["replicas"])

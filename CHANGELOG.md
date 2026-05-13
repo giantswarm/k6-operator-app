@@ -11,6 +11,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Fix ATS tests.
 
+## [0.1.6] - 2026-05-13
+
+### Fixed
+
+- Revert `extraArgs` change.
+
 ## [0.1.5] - 2026-05-13
 
 ### Added
@@ -47,7 +53,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Initial release.
 
-[Unreleased]: https://github.com/giantswarm/k6-operator-app/compare/v0.1.5...HEAD
+[Unreleased]: https://github.com/giantswarm/k6-operator-app/compare/v0.1.6...HEAD
+[0.1.6]: https://github.com/giantswarm/k6-operator-app/compare/v0.1.5...v0.1.6
 [0.1.5]: https://github.com/giantswarm/k6-operator-app/compare/v0.1.4...v0.1.5
 [0.1.4]: https://github.com/giantswarm/k6-operator-app/compare/v0.1.3...v0.1.4
 [0.1.3]: https://github.com/giantswarm/k6-operator-app/compare/v0.1.2...v0.1.3

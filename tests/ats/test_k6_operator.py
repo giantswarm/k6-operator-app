@@ -59,4 +59,4 @@ def pods(kube_cluster: Cluster) -> pykube.Pod:
 @pytest.mark.upgrade
 @pytest.mark.flaky(reruns=5, reruns_delay=10)
 def test_pods_available(deployment: pykube.Deployment):
-    assert int(deployment.obj["status"]["readyReplicas"]) == int(deployment.obj["spec"]["replicas"])
+    assert int(deployment[0].obj["status"]["readyReplicas"]) == int(deployment[0].obj["spec"]["replicas"])

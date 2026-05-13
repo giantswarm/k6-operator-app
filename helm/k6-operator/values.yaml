@@ -44,8 +44,6 @@ k6operator:
 
     replicas: 1
 
-    extraArgs: []
-
     serviceAccount:
       name: k6-operator-controller
       create: true

@@ -10,7 +10,7 @@ from pytest_helm_charts.k8s.deployment import wait_for_deployments_to_run
 logger = logging.getLogger(__name__)
 
 namespace_name = "k6-operator"
-deployment_name = "k6-operator-controller-manager"
+deployment_name = "k6-operator-k6operator-controller-manager"
 
 timeout: int = 900
 

@@ -65,6 +65,9 @@
                         "envFrom": {
                             "type": "array"
                         },
+                        "extraArgs": {
+                            "type": "array"
+                        },
                         "image": {
                             "type": "object",
                             "properties": {

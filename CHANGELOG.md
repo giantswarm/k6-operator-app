@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Chart metadata: add `keywords`.
+
 ## [0.1.7] - 2026-05-13
 
 ### Fixed

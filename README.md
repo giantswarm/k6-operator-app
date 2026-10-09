@@ -1,5 +1,5 @@
-[![CircleCI](https://dl.circleci.com/status-badge/img/gh/giantswarm/k6-operator/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/giantswarm/k6-operator/tree/main)
-[![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/giantswarm/k6-operator/badge)](https://securityscorecards.dev/viewer/?uri=github.com/giantswarm/k6-operator)
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/giantswarm/k6-operator-app/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/giantswarm/k6-operator-app/tree/main)
+[![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/giantswarm/k6-operator-app/badge)](https://securityscorecards.dev/viewer/?uri=github.com/giantswarm/k6-operator-app)
 
 [Guide about how to manage an app on Giant Swarm](https://handbook.giantswarm.io/docs/dev-and-releng/app-developer-processes/adding_app_to_appcatalog/)
 

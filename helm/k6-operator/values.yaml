@@ -1,6 +1,6 @@
 k6operatorEnabled: false
 
-k6operator:
+k6operator:  # @schema skipProperties: true; additionalProperties: true
   customAnnotations: {}
   podAnnotations: {}
   customLabels: {}

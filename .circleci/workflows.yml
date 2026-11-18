@@ -93,7 +93,7 @@ workflows:
         name: build-chart
         app_catalog: control-plane-catalog
         app_catalog_test: control-plane-test-catalog
-        chart: k6-operator-app
+        chart: k6-operator
         # `appVersion` is the version of the packaged application, and this chart
         # packages an app built elsewhere, so that app's version is what
         # Chart.yaml declares. Keep it; the chart version is still stamped.
@@ -155,7 +155,7 @@ workflows:
         name: push-chart
         app_catalog: control-plane-catalog
         app_catalog_test: control-plane-test-catalog
-        chart: k6-operator-app
+        chart: k6-operator
         # `appVersion` is the version of the packaged application, and this chart
         # packages an app built elsewhere, so that app's version is what
         # Chart.yaml declares. Keep it; the chart version is still stamped.
@@ -184,7 +184,7 @@ workflows:
         name: push-chart-release
         app_catalog: control-plane-catalog
         app_catalog_test: control-plane-test-catalog
-        chart: k6-operator-app
+        chart: k6-operator
         # `appVersion` is the version of the packaged application, and this chart
         # packages an app built elsewhere, so that app's version is what
         # Chart.yaml declares. Keep it; the chart version is still stamped.

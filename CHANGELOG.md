@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- Prepare the repository for generated CI: move the kind configuration to `.ats/kind-config.yaml`, drop the ATS cluster options and mark the subchart values free-form for the generated values schema.
 - Update architect to v10.12.0 (giantswarm/k6-operator-app#50)
 
 ### Fixed
